@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Divs Example</title>
+    <style>
+        .box {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #000;
+            color: white;
+            font-size: 18px;
+        }
+
+        #div1 {
+            background-color: rgb(34, 150, 243); /* Blue */
+        }
+
+        #div2 {
+            background-color: rgb(255, 87, 51); /* Orange */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #333;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="div1" class="box">
+        <p>Welcome to the first div! It has a cool blue background.</p>
+    </div>
+
+    <div id="div2" class="box hidden">
+        <p>You've switched to the second div! Enjoy the warm orange background.</p>
+    </div>
+
+    <button id="toggleBtn">Toggle Divs</button>
+
+    <script>
+        document.getElementById('toggleBtn').addEventListener('click', function () {
+            const firstDiv = document.getElementById('div1');
+            const secondDiv = document.getElementById('div2');
+
+            // Toggle the visibility of the first div
+            if (firstDiv.style.display === 'none') {
+                firstDiv.style.display = 'flex';
+                secondDiv.style.display = 'none';
+            } else {
+                firstDiv.style.display = 'none';
+                secondDiv.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+
+</html>
